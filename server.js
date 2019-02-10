@@ -75,10 +75,8 @@ io.on('connection', function (socket) {
         io.emit('scoreUpdate', scores);
     });
 });
-var port = process.env.PORT || 1337;
+var port = process.env.PORT || 80;
 
 server.listen(port, function () {
     console.log(`Listening on ${server.address().port}`);
 });
-
-// Up the raaaaaaymond hogan
