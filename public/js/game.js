@@ -84,7 +84,9 @@ function create() {
     if (self.star) self.star.destroy();
     self.star = self.physics.add.image(starLocation.x, starLocation.y, 'star');
     self.physics.add.overlap(self.ship, self.star, function () {
+      this.physics.world.colliders.destroy();
       this.socket.emit('starCollected');
+      self.star.destroy();
     }, null, self);
 
   });
